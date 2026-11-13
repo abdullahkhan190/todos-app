@@ -3,17 +3,17 @@ import Navbar from './components/Navbar';
 import Todos from './components/Todos';
 import Footer from './components/Footer';
 import AddTodo from './components/AddTodo';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
-  const [todos, setTodos] = useState([
-    // { id: 1, title: "Learn React", description: "Learn the basics of React", completed: false },
-    // { id: 2, title: "Build a Todo App", description: "Create a simple todo app with React", completed: false },
-    // { id: 3, title: "Master JavaScript", description: "Get proficient in JavaScript", completed: false },
-    // { id: 4, title: "Learn CSS", description: "Understand CSS for styling", completed: false },
-    // { id: 5, title: "Learn HTML", description: "Understand the structure of web pages", completed: false },
-    // { id: 6, title: "Learn Node.js", description: "Learn server-side JavaScript with Node.js", completed: false },
-  ]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const handleAdd = (newTodo) => {
     setTodos((prevTodos) => [
