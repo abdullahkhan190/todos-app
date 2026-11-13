@@ -2,9 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem 2rem;
   background-color: #1e293b;
   color: white;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .navbar-logo {
@@ -27,6 +34,14 @@
   text-decoration: none;
 }
 
+.navbar-search {
+  width: 220px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  font: inherit;
+}
+
 .navbar-toggle {
   display: none;
   background: none;
@@ -40,9 +55,23 @@
   .navbar {
     flex-wrap: wrap;
   }
+
+  .navbar-brand {
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
   .navbar-toggle {
     display: block;
+    order: 2;
   }
+
+  .navbar-search {
+    order: 3;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .navbar-links {
     display: none;
     flex-direction: column;

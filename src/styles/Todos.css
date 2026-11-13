@@ -1,0 +1,23 @@
+.todos {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+.no-todos {
+  text-align: center;
+  font-size: 1.2rem;
+}
+.todos h2 {
+  text-align: center;
+}
+
+.todos ul {
+  flex: 0 0 auto;
+  list-style: none;
+  padding-left: 0;
+}

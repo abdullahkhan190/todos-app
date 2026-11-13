@@ -1,0 +1,26 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.App-header,
+.footer {
+  flex-shrink: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
